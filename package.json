@@ -1,0 +1,19 @@
+{
+  "name": "itch-gamelist",
+  "version": "0.0.1-beta.1",
+  "description": "itch.io game finder",
+  "main": "main.js",
+  "author": "IDNatte",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env ITCH_GLS_ENV=dev electron ."
+  },
+  "devDependencies": {
+    "@types/pdfjs-dist": "^2.10.378",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.7"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^2.14.305"
+  }
+}
