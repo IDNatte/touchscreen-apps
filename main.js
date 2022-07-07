@@ -5,9 +5,10 @@ function createWindow() {
   const mainWin = new BrowserWindow({
     width: 800,
     height: 600,
-    // webPreferences: {
-    //   preload: path.join(__dirname, "preload.js"),
-    // },
+    webPreferences: {
+      preload: path.join(__dirname, "module/preload.js"),
+      // nodeIntegration: false,
+    },
   });
 
   if (process.env.ITCH_GLS_ENV === "dev") {

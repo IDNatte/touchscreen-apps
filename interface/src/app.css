@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .content {
   margin-left: 6rem!important;
   padding: 0px 32px;

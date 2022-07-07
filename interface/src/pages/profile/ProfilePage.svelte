@@ -1,4 +1,5 @@
-<script lang="ts">
+<script>
+  // @ts-ignore
   import { Accordion, AccordionItem } from "svelte-collapsible";
   import { fade } from "svelte/transition";
 </script>

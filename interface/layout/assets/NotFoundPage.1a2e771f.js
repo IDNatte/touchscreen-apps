@@ -1,0 +1,1 @@
+import{S as s,i as r,s as i,e as u,b as c,n,d as l}from"./index.c798936e.js";function p(a){let t;return{c(){t=u("p"),t.textContent="Page Not Found"},m(e,o){c(e,t,o)},p:n,i:n,o:n,d(e){e&&l(t)}}}class f extends s{constructor(t){super(),r(this,t,null,p,i,{})}}export{f as default};

@@ -1,19 +1,17 @@
 {
-  "name": "itch-gamelist",
+  "name": "touchscreen-app",
   "version": "0.0.1-beta.1",
-  "description": "itch.io game finder",
+  "description": "touchscreen application for diskominfo tapin",
   "main": "main.js",
   "author": "IDNatte",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env ITCH_GLS_ENV=dev electron ."
+    "dev": "cross-env ITCH_GLS_ENV=dev electron .",
+    "layout:dev": "electron ."
   },
   "devDependencies": {
-    "@types/pdfjs-dist": "^2.10.378",
     "cross-env": "^7.0.3",
     "electron": "^19.0.7"
   },
-  "dependencies": {
-    "pdfjs-dist": "^2.14.305"
-  }
+  "dependencies": {}
 }

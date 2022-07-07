@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 import path from "path";
 import { dirname } from "path";
@@ -16,7 +16,6 @@ export default defineConfig({
   base: process.env.IS_DEV !== "true" ? "./" : "/",
   build: {
     outDir: "layout/",
-
   },
   resolve: {
     alias: {
@@ -25,5 +24,5 @@ export default defineConfig({
       $pages: path.resolve(_dirname, "src/pages"),
       $assets: path.resolve(_dirname, "src/assets"),
     },
-  }
-})
+  },
+});

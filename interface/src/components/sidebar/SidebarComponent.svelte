@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { Link } from "svelte-navigator";
+<script>
+  import { link } from "svelte-spa-router";
 
   import HomeSvg from "$assets/svg/HomeSvg.svelte";
   import ProfileSvg from "$assets/svg/ProfileSvg.svelte";
@@ -11,27 +11,27 @@
 <div class="w-24 fixed h-screen bg-sky-800 text-white flex items-center">
   <ul>
     <li>
-      <Link to="/">
+      <a href="/" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
           <HomeSvg />
           <span>Beranda</span>
         </div>
-      </Link>
+      </a>
     </li>
     <li>
-      <Link to="/profile">
+      <a href="/profile" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
           <ProfileSvg />
           <span>Profil</span>
         </div>
-      </Link>
+      </a>
     </li>
     <li>
-      <Link to="/egov">
+      <a href="/egov" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
@@ -40,10 +40,10 @@
           <span class="text-[12px]">&</span>
           <span class="text-[12px]">Infrastruktur</span>
         </div>
-      </Link>
+      </a>
     </li>
     <li>
-      <Link to="/ikp">
+      <a href="/ikp" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
@@ -52,10 +52,10 @@
           <span class="text-[12px]">Komunikasi</span>
           <span class="text-[12px]">Publik</span>
         </div>
-      </Link>
+      </a>
     </li>
     <li>
-      <Link to="/persantik">
+      <a href="/persantik" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
@@ -64,7 +64,10 @@
           <span class="text-[12px]">&</span>
           <span class="text-[12px]">Statistik</span>
         </div>
-      </Link>
+      </a>
+    </li>
+    <li>
+      <a href="/debug" use:link>debug</a>
     </li>
   </ul>
 </div>

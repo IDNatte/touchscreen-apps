@@ -1,5 +1,5 @@
-<script lang="ts">
+<script>
   import { fade } from "svelte/transition";
 </script>
 
-<div class="flex-auto content" in:fade>persandian dan statistik</div>
+<div class="flex-auto content" in:fade>Persantik Page</div>
