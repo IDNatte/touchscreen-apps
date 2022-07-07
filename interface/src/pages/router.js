@@ -2,10 +2,6 @@ import { wrap } from "svelte-spa-router/wrap";
 
 export const routes = {
   "/": wrap({
-    asyncComponent: () => import("$pages/home/HomePage.svelte"),
-  }),
-
-  "/profile": wrap({
     asyncComponent: () => import("$pages/profile/ProfilePage.svelte"),
   }),
 
@@ -19,10 +15,6 @@ export const routes = {
 
   "/persantik": wrap({
     asyncComponent: () => import("$pages/persantik/PersantikPage.svelte"),
-  }),
-
-  "/debug": wrap({
-    asyncComponent: () => import("$pages/debug/DebugPage.svelte"),
   }),
 
   "*": wrap({

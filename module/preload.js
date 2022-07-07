@@ -1,5 +1,13 @@
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  version: () => process.version.node,
+  loadSettings: () => {
+    ipcRenderer.send("load-settings");
+  },
+  getSettings: (callback) => {
+    ipcRenderer.on("load-settings", callback);
+  },
+  saveSettings: (data) => {
+    ipcRenderer.send("save-settings", data);
+  },
 });

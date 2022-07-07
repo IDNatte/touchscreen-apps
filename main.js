@@ -1,17 +1,18 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
+const rendererEventModule = require("./module/events/main.event");
+
 function createWindow() {
   const mainWin = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, "module/preload.js"),
-      // nodeIntegration: false,
     },
   });
 
-  if (process.env.ITCH_GLS_ENV === "dev") {
+  if (process.env.TOUCHSCREENAPP === "dev") {
     mainWin.loadURL("http://localhost:3000/");
   } else {
     mainWin.loadFile(path.join(__dirname, "interface/layout/index.html"));
@@ -22,6 +23,7 @@ function createWindow() {
 
 app.whenReady().then(() => {
   createWindow();
+  rendererEventModule();
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {

@@ -5,13 +5,44 @@
   "main": "main.js",
   "author": "IDNatte",
   "license": "MIT",
+  "homepage": "https://github.com/IDNatte/touchscreen-apps",
+  "build": {
+    "appId": "com.IDNatte.touchapp",
+    "productName": "Touchscreen Apps",
+    "publish": [
+      {
+        "provider": "github",
+        "repo": "touchscreen-apps",
+        "owner": "IDNatte",
+        "private": true
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "appImage",
+      "category": "Utility"
+    },
+    "files": [
+      "**/*",
+      "interface/layout/*"
+    ]
+  },
   "scripts": {
-    "dev": "cross-env ITCH_GLS_ENV=dev electron .",
-    "layout:dev": "electron ."
+    "dev": "cross-env TOUCHSCREENAPP=dev electron .",
+    "layout:dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "publish:win": "electron-builder --win -p always",
+    "publish:linux": "electron-builder --linux -p always"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "^19.0.7"
+    "electron": "^19.0.7",
+    "electron-builder": "^23.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lokijs": "^1.5.12"
+  }
 }

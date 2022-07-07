@@ -6,22 +6,13 @@
   import IkpSvg from "$assets/svg/IKPSvg.svelte";
   import EgovSvg from "$assets/svg/EGOVSvg.svelte";
   import PersantikSvg from "$assets/svg/PersantikSvg.svelte";
+  import ExitSvg from "$assets/svg/ExitSvg.svelte";
 </script>
 
 <div class="w-24 fixed h-screen bg-sky-800 text-white flex items-center">
   <ul>
     <li>
       <a href="/" use:link>
-        <div
-          class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
-        >
-          <HomeSvg />
-          <span>Beranda</span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/profile" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
@@ -65,9 +56,6 @@
           <span class="text-[12px]">Statistik</span>
         </div>
       </a>
-    </li>
-    <li>
-      <a href="/debug" use:link>debug</a>
     </li>
   </ul>
 </div>
