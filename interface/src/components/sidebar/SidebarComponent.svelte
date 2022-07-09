@@ -1,12 +1,11 @@
 <script>
   import { link } from "svelte-spa-router";
 
-  import HomeSvg from "$assets/svg/HomeSvg.svelte";
   import ProfileSvg from "$assets/svg/ProfileSvg.svelte";
   import IkpSvg from "$assets/svg/IKPSvg.svelte";
   import EgovSvg from "$assets/svg/EGOVSvg.svelte";
   import PersantikSvg from "$assets/svg/PersantikSvg.svelte";
-  import ExitSvg from "$assets/svg/ExitSvg.svelte";
+  import SettingsSvg from "$assets/svg/SettingsSvg.svelte";
 </script>
 
 <div class="w-24 fixed h-screen bg-sky-800 text-white flex items-center">
@@ -17,7 +16,7 @@
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >
           <ProfileSvg />
-          <span>Profil</span>
+          <span class="text-[12px]">Profile</span>
         </div>
       </a>
     </li>
@@ -54,6 +53,17 @@
           <span class="text-[12px]">Persandian</span>
           <span class="text-[12px]">&</span>
           <span class="text-[12px]">Statistik</span>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="/persantik" use:link>
+        <div
+          class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
+        >
+          <SettingsSvg />
+          <span class="text-[12px]">Setting</span>
         </div>
       </a>
     </li>
