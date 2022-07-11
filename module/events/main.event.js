@@ -8,7 +8,10 @@ module.exports = function rendererEventModule() {
     let settingsConfig = settings.getCollection("settings");
     let settingsUpdate = settingsConfig.get(1);
 
-    settingsUpdate.serverAddr = data.data.serverAddr;
+    settingsUpdate.settings.ikp = data.ikp;
+    settingsUpdate.settings.egov = data.egov;
+    settingsUpdate.settings.persantik = data.persantik;
+
     settingsConfig.update(settingsUpdate);
   });
 
@@ -21,10 +24,10 @@ module.exports = function rendererEventModule() {
       let initIfEmpty = settings.createCollection("settings");
       initIfEmpty.insert({
         settings: {
-          ikp: "https://raw.githubusercontent.com/IDNatte/item_kominfo/03a00e47dde6f9e5ce680ee70d5b139e1c3cf9d7/ikp/data.pdf",
-          egov: "https://raw.githubusercontent.com/IDNatte/item_kominfo/03a00e47dde6f9e5ce680ee70d5b139e1c3cf9d7/egov_infra/data.pdf",
+          ikp: "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
+          egov: "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
           persantik:
-            "https://raw.githubusercontent.com/IDNatte/item_kominfo/03a00e47dde6f9e5ce680ee70d5b139e1c3cf9d7/sandi_statistik/data.pdf",
+            "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
         },
       });
 

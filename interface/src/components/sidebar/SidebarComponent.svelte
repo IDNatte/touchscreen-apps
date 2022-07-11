@@ -1,6 +1,8 @@
 <script>
   import { link } from "svelte-spa-router";
 
+  import { openModal } from "$lib/module/modal/modal";
+
   import ProfileSvg from "$assets/svg/ProfileSvg.svelte";
   import IkpSvg from "$assets/svg/IKPSvg.svelte";
   import EgovSvg from "$assets/svg/EGOVSvg.svelte";
@@ -58,7 +60,7 @@
     </li>
 
     <li>
-      <a href="/persantik" use:link>
+      <a href="#!" on:click|preventDefault={openModal}>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >

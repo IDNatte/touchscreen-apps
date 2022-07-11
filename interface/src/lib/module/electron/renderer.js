@@ -4,7 +4,6 @@ import { settings } from "$lib/store/settings.store";
 window.electronAPI.loadSettings();
 
 window.electronAPI.getSettings((e, data) => {
-  console.log(data);
   settings.set({
     IKPFileAddress: data.ikp,
     EGOVFileAddress: data.egov,
@@ -12,6 +11,7 @@ window.electronAPI.getSettings((e, data) => {
   });
 });
 
-// document.addEventListener("settings-save", (e) => {
-//   window.electronAPI.saveSettings(e.detail);
-// });
+document.addEventListener("settings-save", (e) => {
+  window.electronAPI.saveSettings(e.detail.data);
+  window.location.reload();
+});

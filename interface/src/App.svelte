@@ -4,6 +4,38 @@
 
   import SidebarComponent from "$components/sidebar/SidebarComponent.svelte";
   import ModalComponent from "$components/modal/ModalComponent.svelte";
+  import { settings } from "$lib/store/settings.store";
+  import { closeModal } from "$lib/module/modal/modal";
+  import { onMount } from "svelte";
+
+  const urlTest = /^(http|https):\/\/[^ "]+$/;
+
+  function saveSettings(event) {
+    let settingsForm = new FormData(event.target);
+    const data = {};
+    for (let field of settingsForm) {
+      const [key, value] = field;
+      if (urlTest.test(String(value))) {
+        data[key] = value;
+      } else {
+        data[key] = "";
+      }
+    }
+
+    let triggerSave = new CustomEvent("settings-save", {
+      detail: {
+        data: data,
+      },
+    });
+
+    document.dispatchEvent(triggerSave);
+    closeModal();
+  }
+
+  onMount(() => {
+    let loadSettings = new CustomEvent("load-settings");
+    document.dispatchEvent(loadSettings);
+  });
 </script>
 
 <main class="flex w-full h-full bg-gray-50">
@@ -11,9 +43,66 @@
   <Router {routes} />
 
   <ModalComponent modalClass="window-settings" modalTitle="pengaturan">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ullam
-    illum dicta consectetur. Aliquam, consequuntur commodi harum animi,
-    provident voluptatum distinctio, ipsum iure alias repellat facere incidunt
-    illo quam velit?
+    <div class="settings">
+      <form class="__formReset" on:submit|preventDefault={saveSettings}>
+        <div class="_ikp pb-5">
+          <label
+            for="ikp-fileurl"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link data IKP</label
+          >
+          <input
+            required
+            id="ikp-fileurl"
+            placeholder="Masukkan link file data IKP"
+            type="url"
+            name="ikp"
+            value={$settings.IKPFileAddress}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+        <div class="__egov pb-5">
+          <label
+            for="egov-fileurl"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link data E-Gov & Infrastruktur</label
+          >
+          <input
+            required
+            id="egov-fileurl"
+            placeholder="Masukkan link file data E-Gov & Infrastruktur"
+            type="url"
+            name="egov"
+            value={$settings.EGOVFileAddress}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
+        <div class="__persantik pb-5">
+          <label
+            for="persantik-fileurl"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link data Persandian & Statistik</label
+          >
+          <input
+            required
+            id="persantik-fileurl"
+            placeholder="Masukkan link file data Persandian & Statistik"
+            type="url"
+            name="persantik"
+            value={$settings.PersantikFileAddress}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
+        <div class="block text-right">
+          <button
+            type="submit"
+            class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out"
+            >Simpan</button
+          >
+        </div>
+      </form>
+    </div>
   </ModalComponent>
 </main>
