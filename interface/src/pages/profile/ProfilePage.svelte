@@ -1,6 +1,7 @@
 <script>
   // @ts-ignore
   import { Accordion, AccordionItem } from "svelte-collapsible";
+  import { changeableAssets } from "$lib/store/settings.store";
   import { fade } from "svelte/transition";
 </script>
 
@@ -13,7 +14,7 @@
     </div>
 
     <div class="profile-display flex flex-col">
-      <img class="rounded-sm" src="assets/img/kepaladisk.jpg" alt="" />
+      <img class="rounded-sm" src={$changeableAssets.hos} alt="" />
       <div class="text-center">
         <div class="text-center py-5 text-xl font-semibold ">Kepala Dinas</div>
         <div>H.M. Tamberin, S.Sos, MM.</div>
@@ -21,7 +22,7 @@
       </div>
     </div>
     <div class="profile-display flex flex-col">
-      <img class="rounded-sm" src="assets/img/sekredisk.jpg" alt="" />
+      <img class="rounded-sm" src={$changeableAssets.secretary} alt="" />
       <div class="text-center">
         <div class="py-5 text-xl font-semibold">Sekertaris Dinas</div>
         <div>Ir. Hj. Gusti Kamariah, MMA.</div>
@@ -126,7 +127,7 @@
           </div>
           <div class="p-8 mb-2" slot="body">
             <div class="flex justify-center align-middle">
-              <img class="" src="changeable/strukorg.png" alt="" />
+              <img class="" src={$changeableAssets.structure} alt="" />
             </div>
           </div>
         </AccordionItem>

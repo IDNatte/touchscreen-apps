@@ -4,9 +4,8 @@
 
   import SidebarComponent from "$components/sidebar/SidebarComponent.svelte";
   import ModalComponent from "$components/modal/ModalComponent.svelte";
-  import { settings } from "$lib/store/settings.store";
+  import { settings, changeableAssets } from "$lib/store/settings.store";
   import { closeModal } from "$lib/module/modal/modal";
-  import { onMount } from "svelte";
 
   const urlTest = /^(http|https):\/\/[^ "]+$/;
 
@@ -31,11 +30,6 @@
     document.dispatchEvent(triggerSave);
     closeModal();
   }
-
-  onMount(() => {
-    let loadSettings = new CustomEvent("load-settings");
-    document.dispatchEvent(loadSettings);
-  });
 </script>
 
 <main class="flex w-full h-full bg-gray-50">
@@ -91,6 +85,57 @@
             type="url"
             name="persantik"
             value={$settings.PersantikFileAddress}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
+        <div class="__egov pb-5">
+          <label
+            for="changeable-hos"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link gambar kepala dinas</label
+          >
+          <input
+            required
+            id="changeable-hos"
+            placeholder="Masukkan link file gambar kepala dinas"
+            type="url"
+            name="hos"
+            value={$changeableAssets.hos}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
+        <div class="__egov pb-5">
+          <label
+            for="changeable-secretary"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link gambar sekertaris dinas</label
+          >
+          <input
+            required
+            id="changeable-secretary"
+            placeholder="Masukkan link file gambar sekertaris dinas"
+            type="url"
+            name="secretary"
+            value={$changeableAssets.secretary}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
+        <div class="__egov pb-5">
+          <label
+            for="changeable-structure"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link gambar struktur organisasi</label
+          >
+          <input
+            required
+            id="changeable-structure"
+            placeholder="Masukkan link file gambar struktur organisasi."
+            type="url"
+            name="structure"
+            value={$changeableAssets.structure}
             class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           />
         </div>
