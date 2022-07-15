@@ -27,3 +27,6 @@ dist-ssr
 # costume build folder
 layout/
 layout
+
+.yarn
+.yarnrc.*
