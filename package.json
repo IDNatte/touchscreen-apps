@@ -35,7 +35,8 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "publish:win": "electron-builder --win -p always",
-    "publish:linux": "electron-builder --linux -p always"
+    "publish:linux": "electron-builder --linux -p always",
+    "web:dev": "vite --help"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -43,6 +44,9 @@
     "electron-builder": "^23.1.0"
   },
   "dependencies": {
-    "lokijs": "^1.5.12"
+    "lokijs": "^1.5.12",
+    "pdfjs-dist": "^3.0.279",
+    "svelte-collapsible": "^0.2.1",
+    "svelte-spa-router": "^3.3.0"
   }
 }

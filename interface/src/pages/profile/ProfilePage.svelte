@@ -14,7 +14,7 @@
     </div>
 
     <div class="profile-display flex flex-col">
-      <img class="rounded-sm" src={$changeableAssets.hos} alt="" />
+      <img class="rounded-sm" src={$changeableAssets.hos} alt="kepala dinas" />
       <div class="text-center">
         <div class="text-center py-5 text-xl font-semibold ">Kepala Dinas</div>
         <div>H.M. Tamberin, S.Sos, MM.</div>
@@ -22,11 +22,15 @@
       </div>
     </div>
     <div class="profile-display flex flex-col">
-      <img class="rounded-sm" src={$changeableAssets.secretary} alt="" />
+      <img
+        class="rounded-sm"
+        src={$changeableAssets.secretary}
+        alt="sekertaris"
+      />
       <div class="text-center">
         <div class="py-5 text-xl font-semibold">Sekertaris Dinas</div>
-        <div>Ir. Hj. Gusti Kamariah, MMA.</div>
-        <div>NIP. 19650214 199303 2 004</div>
+        <div>Haris Faridi, S.Sos, M.M.</div>
+        <div>NIP. 19700325 199303 1 005</div>
       </div>
     </div>
 
