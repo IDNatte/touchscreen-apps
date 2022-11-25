@@ -1,6 +1,6 @@
 {
   "name": "touchscreen-app",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "touchscreen application for diskominfo tapin",
   "main": "main.js",
   "author": "IDNatte",
@@ -44,9 +44,6 @@
     "electron-builder": "^23.1.0"
   },
   "dependencies": {
-    "lokijs": "^1.5.12",
-    "pdfjs-dist": "^3.0.279",
-    "svelte-collapsible": "^0.2.1",
-    "svelte-spa-router": "^3.3.0"
+    "lokijs": "^1.5.12"
   }
 }
