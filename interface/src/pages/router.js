@@ -5,17 +5,17 @@ export const routes = {
     asyncComponent: () => import("$pages/profile/ProfilePage.svelte"),
   }),
 
-  "/egov": wrap({
-    asyncComponent: () => import("$pages/egov/EgovPage.svelte"),
-  }),
+  // "/egov": wrap({
+  //   asyncComponent: () => import("$pages/egov/EgovPage.svelte"),
+  // }),
 
-  "/ikp": wrap({
-    asyncComponent: () => import("$pages/ikp/IKPPage.svelte"),
-  }),
+  // "/ikp": wrap({
+  //   asyncComponent: () => import("$pages/ikp/IKPPage.svelte"),
+  // }),
 
-  "/persantik": wrap({
-    asyncComponent: () => import("$pages/persantik/PersantikPage.svelte"),
-  }),
+  // "/persantik": wrap({
+  //   asyncComponent: () => import("$pages/persantik/PersantikPage.svelte"),
+  // }),
 
   "*": wrap({
     asyncComponent: () => import("$pages/error/NotFoundPage.svelte"),

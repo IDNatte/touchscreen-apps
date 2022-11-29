@@ -18,6 +18,7 @@ module.exports = function rendererEventModule() {
     changeableAssetsUpdate.assets.hos = data.hos;
     changeableAssetsUpdate.assets.secretary = data.secretary;
     changeableAssetsUpdate.assets.structure = data.structure;
+    changeableAssetsUpdate.assets.absent = data.absent;
 
     settingsConfig.update(settingsUpdate);
     changeableAssets.update(changeableAssetsUpdate);
@@ -48,9 +49,12 @@ module.exports = function rendererEventModule() {
 
       changeableAssets.insert({
         assets: {
-          hos: "test",
-          secretary: "test",
-          structure: "test",
+          hos: "https://web.tapinkab.go.id/tempstorage/images/kadis.png",
+          secretary: "https://web.tapinkab.go.id/tempstorage/images/kadis.png",
+          structure:
+            "https://web.tapinkab.go.id/tempstorage/images/strukturorg",
+          absent:
+            "https://docs.google.com/forms/d/e/1FAIpQLSeu1tdb9ExSw6lEZkSmT2XL4e59GfkQpMwgnj52jlLKrf1loA/viewform?embedded=true",
         },
       });
 

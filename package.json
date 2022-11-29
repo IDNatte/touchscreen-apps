@@ -1,6 +1,6 @@
 {
   "name": "touchscreen-app",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "touchscreen application for diskominfo tapin",
   "main": "main.js",
   "author": "IDNatte",
@@ -34,9 +34,8 @@
     "layout:dev": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "publish:win": "electron-builder --win -p always",
-    "publish:linux": "electron-builder --linux -p always",
-    "web:dev": "vite --help"
+    "publish:win": "cd interface/ && yarn run build && cd .. && electron-builder --win -p always",
+    "publish:linux": "cd interface/ && yarn run build && cd .. &&  electron-builder --linux -p always"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

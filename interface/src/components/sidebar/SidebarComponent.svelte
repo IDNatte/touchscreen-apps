@@ -4,10 +4,11 @@
   import { openModal } from "$lib/module/modal/modal";
 
   import ProfileSvg from "$assets/svg/ProfileSvg.svelte";
-  import IkpSvg from "$assets/svg/IKPSvg.svelte";
-  import EgovSvg from "$assets/svg/EGOVSvg.svelte";
-  import PersantikSvg from "$assets/svg/PersantikSvg.svelte";
+  // import IkpSvg from "$assets/svg/IKPSvg.svelte";
+  // import EgovSvg from "$assets/svg/EGOVSvg.svelte";
+  // import PersantikSvg from "$assets/svg/PersantikSvg.svelte";
   import SettingsSvg from "$assets/svg/SettingsSvg.svelte";
+  import ClipboardSvg from "$assets/svg/ClipboardSvg.svelte";
 </script>
 
 <div class="w-24 fixed h-screen bg-sky-800 text-white flex items-center">
@@ -22,7 +23,8 @@
         </div>
       </a>
     </li>
-    <li>
+
+    <!-- <li>
       <a href="/egov" use:link>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
@@ -57,10 +59,22 @@
           <span class="text-[12px]">Statistik</span>
         </div>
       </a>
+    </li> -->
+
+    <li>
+      <a href="#!" on:click|preventDefault={() => openModal("window-absent")}>
+        <div
+          class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
+        >
+          <ClipboardSvg />
+          <span class="text-[12px]">Absen</span>
+          <span class="text-[12px]">Pengunjung</span>
+        </div>
+      </a>
     </li>
 
     <li>
-      <a href="#!" on:click|preventDefault={openModal}>
+      <a href="#!" on:click|preventDefault={() => openModal("window-settings")}>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
         >

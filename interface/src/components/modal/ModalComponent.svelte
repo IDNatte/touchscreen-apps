@@ -20,25 +20,30 @@
 
 <svelte:window on:keyup|preventDefault={escapeKeyPress} />
 
-<div
-  class:fixed={$modal.show}
-  class:hidden={!$modal.show}
-  style="padding-left: 0px !important;"
-  class="ml-[6rem] {modalClass} flex w-full items-center justify-center h-screen bg-white/[0.6]"
->
+{#if $modal.class === modalClass}
   <div
-    class="modal-content h-auto flex flex-col w-7/12 bg-white shadow-lg border rounded"
+    class:fixed={$modal.show}
+    class:hidden={!$modal.show}
+    style="padding-left: 0px !important;"
+    class="ml-[6rem] {modalClass} flex w-full items-center justify-center h-screen bg-white/[0.6]"
   >
     <div
-      class="flex justify-between items-center px-4 py-5 border-b border-b-gray-300"
+      class="modal-content h-auto flex flex-col w-7/12 bg-white shadow-lg border rounded"
     >
-      <span class="font-bold capitalize text-gray-600">{modalTitle}</span>
-      <button class="duration-300 hover:rotate-90" on:click={closeButtonPress}>
-        <CloseSvg color="stroke-gray-500" />
-      </button>
-    </div>
-    <div class="modal-content p-6">
-      <slot />
+      <div
+        class="flex justify-between items-center px-4 py-5 border-b border-b-gray-300"
+      >
+        <span class="font-bold capitalize text-gray-600">{modalTitle}</span>
+        <button
+          class="duration-300 hover:rotate-90"
+          on:click={closeButtonPress}
+        >
+          <CloseSvg color="stroke-gray-500" />
+        </button>
+      </div>
+      <div class="modal-content p-6">
+        <slot />
+      </div>
     </div>
   </div>
-</div>
+{/if}

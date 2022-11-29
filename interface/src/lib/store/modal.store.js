@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const modal = writable({ show: false });
+export const modal = writable({ show: false, class: null });

@@ -1,6 +1,7 @@
 import { settings, changeableAssets } from "$lib/store/settings.store";
 
 window.electronAPI.loadSettings();
+let x = window.electronAPI.loadSettings();
 
 window.electronAPI.getSettings((e, data) => {
   settings.set({

@@ -32,14 +32,14 @@
   }
 </script>
 
-<main class="flex w-full h-full bg-gray-50">
+<main class="flex w-full">
   <SidebarComponent />
   <Router {routes} />
 
   <ModalComponent modalClass="window-settings" modalTitle="pengaturan">
     <div class="settings">
       <form class="__formReset" on:submit|preventDefault={saveSettings}>
-        <div class="_ikp pb-5">
+        <!-- <div class="_ikp pb-5">
           <label
             for="ikp-fileurl"
             class="form-label inline-block mb-2 text-gray-700"
@@ -87,7 +87,7 @@
             value={$settings.PersantikFileAddress}
             class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           />
-        </div>
+        </div> -->
 
         <div class="__egov pb-5">
           <label
@@ -140,6 +140,23 @@
           />
         </div>
 
+        <div class="__egov pb-5">
+          <label
+            for="changeable-absent"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link Absen (Google Drive)</label
+          >
+          <input
+            required
+            id="changeable-absent"
+            placeholder="Masukkan link file gambar struktur organisasi."
+            type="url"
+            name="absent"
+            value={$changeableAssets.absent}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
         <div class="block text-right">
           <button
             type="submit"
@@ -148,6 +165,19 @@
           >
         </div>
       </form>
+    </div>
+  </ModalComponent>
+
+  <ModalComponent modalClass="window-absent" modalTitle="Absen Pengunjung">
+    <div class="absent">
+      <iframe
+        title="Absen Pengunjung"
+        src={$changeableAssets.absent}
+        class="w-full h-[500px]"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">Memuat…</iframe
+      >
     </div>
   </ModalComponent>
 </main>

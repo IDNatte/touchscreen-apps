@@ -1,5 +1,4 @@
 <script>
-  // @ts-ignore
   import { Accordion, AccordionItem } from "svelte-collapsible";
   import { changeableAssets } from "$lib/store/settings.store";
   import { fade } from "svelte/transition";
@@ -126,7 +125,10 @@
           </div>
         </AccordionItem>
         <AccordionItem key="strukturorg">
-          <div class="p-5 bg-gray-700 text-white rounded" slot="header">
+          <div
+            class="p-5 border-2 bg-gray-700 text-white rounded"
+            slot="header"
+          >
             Struktur Organisasi Dinas Komunikasi dan Informatika Kabupaten Tapin
           </div>
           <div class="p-8 mb-2" slot="body">
@@ -137,5 +139,14 @@
         </AccordionItem>
       </Accordion>
     </div>
+  </div>
+
+  <div class="flex w-full flex-col items-center justify-center mb-5">
+    <span class="pb-[1rem] font-bold text-lg">Scan disini untuk absen</span>
+    <img
+      class="w-[250px] h-auto"
+      src="assets/img/qrcode.png"
+      alt="qrcode absen pengunjung"
+    />
   </div>
 </div>

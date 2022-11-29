@@ -16,9 +16,8 @@ function createWindow() {
     mainWin.loadURL("http://localhost:3000/");
   } else {
     mainWin.loadFile(path.join(__dirname, "interface/layout/index.html"));
+    // mainWin.setFullScreen(true);
   }
-
-  mainWin.setFullScreen(true);
 }
 
 app.whenReady().then(() => {
