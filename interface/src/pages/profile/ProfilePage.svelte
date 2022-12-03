@@ -8,7 +8,7 @@
   <div class="grid grid-cols-2 place-items-center">
     <div class="col-span-2 border rounded border-slate-500 my-6 w-full">
       <h2 class="capitalize font-semibold text-2xl text-center py-6">
-        Profile Dinas Komunikasi dan Informatika Kabupaten Tapin
+        Dinas Komunikasi dan Informatika Kabupaten Tapin
       </h2>
     </div>
 

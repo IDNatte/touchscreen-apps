@@ -50,7 +50,8 @@ module.exports = function rendererEventModule() {
       changeableAssets.insert({
         assets: {
           hos: "https://web.tapinkab.go.id/tempstorage/images/kadis.png",
-          secretary: "https://web.tapinkab.go.id/tempstorage/images/kadis.png",
+          secretary: "https://web.tapinkab.go.id/tempstorage/images/sekre.png",
+          skm: "https://docs.google.com/forms/d/e/1FAIpQLSd9CoR_CzjrjE56DFRkGWa-Qq-CJzEHboqeeshWc-eso8l4JQ/viewform?embedded=true",
           structure:
             "https://web.tapinkab.go.id/tempstorage/images/strukturorg",
           absent:

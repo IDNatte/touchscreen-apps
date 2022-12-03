@@ -157,6 +157,23 @@
           />
         </div>
 
+        <div class="__egov pb-5">
+          <label
+            for="changeable-skm"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Link SKM (Google Drive)</label
+          >
+          <input
+            required
+            id="changeable-skm"
+            placeholder="Masukkan link file gambar struktur organisasi."
+            type="url"
+            name="skm"
+            value={$changeableAssets.skm}
+            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          />
+        </div>
+
         <div class="block text-right">
           <button
             type="submit"
@@ -173,6 +190,19 @@
       <iframe
         title="Absen Pengunjung"
         src={$changeableAssets.absent}
+        class="w-full h-[500px]"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">Memuat…</iframe
+      >
+    </div>
+  </ModalComponent>
+
+  <ModalComponent modalClass="window-skm" modalTitle="Absen Pengunjung">
+    <div class="skm">
+      <iframe
+        title="Absen Pengunjung"
+        src={$changeableAssets.skm}
         class="w-full h-[500px]"
         frameborder="0"
         marginheight="0"

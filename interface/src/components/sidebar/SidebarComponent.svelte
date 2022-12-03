@@ -74,6 +74,18 @@
     </li>
 
     <li>
+      <a href="#!" on:click|preventDefault={() => openModal("window-skm")}>
+        <div
+          class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
+        >
+          <ClipboardSvg />
+          <span class="text-[12px]">Survey</span>
+          <span class="text-[12px]">SKM</span>
+        </div>
+      </a>
+    </li>
+
+    <li>
       <a href="#!" on:click|preventDefault={() => openModal("window-settings")}>
         <div
           class="flex flex-col justify-center items-center py-5 px-[.93rem] hover:bg-sky-900 duration-150"
