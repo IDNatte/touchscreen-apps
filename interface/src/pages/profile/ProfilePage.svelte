@@ -1,4 +1,6 @@
 <script>
+  // @ts-nocheck
+
   import { Accordion, AccordionItem } from "svelte-collapsible";
   import { changeableAssets } from "$lib/store/settings.store";
   import { fade } from "svelte/transition";
@@ -15,9 +17,9 @@
     <div class="profile-display flex flex-col">
       <img class="rounded-sm" src={$changeableAssets.hos} alt="kepala dinas" />
       <div class="text-center">
-        <div class="text-center py-5 text-xl font-semibold ">Kepala Dinas</div>
-        <div>H.M. Tamberin, S.Sos, MM.</div>
-        <div>NIP. 19630210 198603 1 028</div>
+        <div class="text-center py-5 text-xl font-semibold">Kepala Dinas</div>
+        <div class="capitalize">{$changeableAssets.hosName}</div>
+        <div>NIP. {$changeableAssets.hosNip}</div>
       </div>
     </div>
     <div class="profile-display flex flex-col">
@@ -28,8 +30,8 @@
       />
       <div class="text-center">
         <div class="py-5 text-xl font-semibold">Sekertaris Dinas</div>
-        <div>Haris Faridi, S.Sos, M.M.</div>
-        <div>NIP. 19700325 199303 1 005</div>
+        <div class="capitalize">{$changeableAssets.secretaryName}</div>
+        <div>NIP. {$changeableAssets.secretaryNip}</div>
       </div>
     </div>
 
@@ -145,7 +147,7 @@
     <span class="pb-[1rem] font-bold text-lg">Scan disini untuk absen</span>
     <img
       class="w-[250px] h-auto"
-      src="assets/img/qrcode.png"
+      src={$changeableAssets.qrcodeAbsent}
       alt="qrcode absen pengunjung"
     />
   </div>
