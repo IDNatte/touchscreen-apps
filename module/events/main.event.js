@@ -5,15 +5,9 @@ const settings = new Database("touchapps/settings");
 
 module.exports = function rendererEventModule() {
   ipcMain.on("save-settings", (event, data) => {
-    // let settingsConfig = settings.getCollection("settings");
     let changeableAssets = settings.getCollection("changeableAssets");
 
     let changeableAssetsUpdate = changeableAssets.get(1);
-    // let settingsUpdate = settingsConfig.get(1);
-
-    // settingsUpdate.settings.ikp = data.ikp;
-    // settingsUpdate.settings.egov = data.egov;
-    // settingsUpdate.settings.persantik = data.persantik;
 
     changeableAssetsUpdate.assets.hosName = data.hosName;
     changeableAssetsUpdate.assets.secretaryName = data.secretaryName;
@@ -25,8 +19,8 @@ module.exports = function rendererEventModule() {
     changeableAssetsUpdate.assets.secretary = data.secretary;
     changeableAssetsUpdate.assets.structure = data.structure;
     changeableAssetsUpdate.assets.absent = data.absent;
+    changeableAssetsUpdate.assets.skm = data.skm;
 
-    // settingsConfig.update(settingsUpdate);
     changeableAssets.update(changeableAssetsUpdate);
   });
 
@@ -41,16 +35,6 @@ module.exports = function rendererEventModule() {
 
       event.sender.send("load-settings", data);
     } catch (error) {
-      // let initIfEmpty = settings.createCollection("settings");
-      // initIfEmpty.insert({
-      //   settings: {
-      //     ikp: "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
-      //     egov: "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
-      //     persantik:
-      //       "https://raw.githubusercontent.com/IDNatte/item_kominfo/master/egov_infra/data.pdf",
-      //   },
-      // });
-
       let changeableAssets = settings.createCollection("changeableAssets");
 
       changeableAssets.insert({
@@ -69,7 +53,6 @@ module.exports = function rendererEventModule() {
       });
 
       let data = {
-        // settings: initIfEmpty.get(1).settings,
         assets: changeableAssets.get(1).assets,
       };
 

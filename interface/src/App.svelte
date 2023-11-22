@@ -6,26 +6,18 @@
 
   import SidebarComponent from "$components/sidebar/SidebarComponent.svelte";
   import ModalComponent from "$components/modal/ModalComponent.svelte";
-  import { settings, changeableAssets } from "$lib/store/settings.store";
+  import { changeableAssets } from "$lib/store/settings.store";
   import { closeModal } from "$lib/module/modal/modal";
 
   const urlTest = /^(http|https):\/\/[^ "]+$/;
 
   function saveSettings(event) {
-    console.log("saving data...");
     let settingsForm = new FormData(event.target);
     const data = {};
     for (let field of settingsForm) {
       const [key, value] = field;
       data[key] = value;
-      // if (urlTest.test(String(value))) {
-      //   data[key] = value;
-      // } else {
-      //   data[key] = "";
-      // }
     }
-
-    // console.log(data);
 
     let triggerSave = new CustomEvent("settings-save", {
       detail: {
@@ -45,56 +37,6 @@
   <ModalComponent modalClass="window-settings" modalTitle="pengaturan">
     <div class="settings">
       <form class="__formReset" on:submit|preventDefault={saveSettings}>
-        <!-- <div class="_ikp pb-5">
-          <label
-            for="ikp-fileurl"
-            class="form-label inline-block mb-2 text-gray-700"
-            >Link data IKP</label
-          >
-          <input
-            required
-            id="ikp-fileurl"
-            placeholder="Masukkan link file data IKP"
-            type="url"
-            name="ikp"
-            value={$settings.IKPFileAddress}
-            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-          />
-        </div>
-        <div class="__egov pb-5">
-          <label
-            for="egov-fileurl"
-            class="form-label inline-block mb-2 text-gray-700"
-            >Link data E-Gov & Infrastruktur</label
-          >
-          <input
-            required
-            id="egov-fileurl"
-            placeholder="Masukkan link file data E-Gov & Infrastruktur"
-            type="url"
-            name="egov"
-            value={$settings.EGOVFileAddress}
-            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-          />
-        </div>
-
-        <div class="__persantik pb-5">
-          <label
-            for="persantik-fileurl"
-            class="form-label inline-block mb-2 text-gray-700"
-            >Link data Persandian & Statistik</label
-          >
-          <input
-            required
-            id="persantik-fileurl"
-            placeholder="Masukkan link file data Persandian & Statistik"
-            type="url"
-            name="persantik"
-            value={$settings.PersantikFileAddress}
-            class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-          />
-        </div> -->
-
         <div class="_kadis-sekertaris flex w-full flex-col">
           <h1 class="py-7 text-2xl">Detail Pimpinan</h1>
           <!-- nama pimpinan -->
